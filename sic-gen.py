@@ -22,9 +22,9 @@ from timeit import default_timer as timer
 from typing import Tuple, List, Callable
 
 parser = argparse.ArgumentParser(description='Generator of synthetic Iris-Codes.')
-parser.add_argument('-n', '--subjects', action='store', type=int, nargs='?', default=1, help='number of subjects (default: 1)')
+parser.add_argument('-n', '--subjects', action='store', type=int, nargs='?', default=1000, help='number of subjects (default: 1)')
 parser.add_argument('-d', '--directory', action='store', type=Path, nargs='?', default="generated", help='relative path to directory where the generated Iris-Codes will be stored (default: /generated/)')
-parser.add_argument('-p', '--processes', action='store', type=int, nargs='?', default=1, help='number of CPU processes to use (default: 1)')
+parser.add_argument('-p', '--processes', action='store', type=int, nargs='?', default=8, help='number of CPU processes to use (default: 1)')
 parser.add_argument('-v', '--validate', action='store_true', help='run statistical validation after generation of templates')
 parser.add_argument('-l', '--logging', action='count', help='logging verbosity level (default is warning, -l for info and -ll for debug)')
 parser.add_argument('--version', action='version', version='%(prog)s 1.0')
